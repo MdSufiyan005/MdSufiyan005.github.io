@@ -5,46 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohammad Sufiyan — Edge AI/ML &amp; Backend Engineer</title>
 <meta name="description" content="Mohammad Sufiyan — Edge AI/ML Engineer and Backend Developer. Building inference systems that run on machines with 8GB of RAM.">
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+ 
 <style>
   :root{
-    --bg: #F7F4EE;
+    --bg: #F4F6F8;
     --bg-elevated: #FFFFFF;
-    --bg-sunken: #EFEAE0;
-    --text: #2B2820;
-    --text-muted: #6B6558;
-    --border: #E4DFD2;
-    --accent: #BF5B3C;
+    --bg-sunken: #E8ECF0;
+    --text: #1B2430;
+    --text-muted: #5C6B7A;
+    --border: #DCE3EA;
+    --accent: #2E5F82;
     --accent-text: #FFFFFF;
-    --accent-soft: #F3E1D6;
-    --code-bg: #EFEAE0;
-    --shadow: 0 1px 2px rgba(43,40,32,0.04), 0 4px 16px rgba(43,40,32,0.06);
+    --accent-soft: #DCE8F0;
+    --code-bg: #E8ECF0;
+    --shadow: 0 1px 2px rgba(20,30,40,0.04), 0 4px 16px rgba(20,30,40,0.06);
     color-scheme: light;
   }
-
+ 
   [data-theme="dark"]{
-    --bg: #1C1B18;
-    --bg-elevated: #242320;
-    --bg-sunken: #171613;
-    --text: #F1ECE0;
-    --text-muted: #A39C8C;
-    --border: #38352C;
-    --accent: #E08461;
-    --accent-text: #1C1B18;
-    --accent-soft: #3A2A22;
-    --code-bg: #171613;
-    --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+    --bg: #12161C;
+    --bg-elevated: #1A2029;
+    --bg-sunken: #0E1116;
+    --text: #E7ECF2;
+    --text-muted: #8B98A8;
+    --border: #2A323D;
+    --accent: #6FA8CB;
+    --accent-text: #0E1116;
+    --accent-soft: #1F3547;
+    --code-bg: #0E1116;
+    --shadow: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.35);
     color-scheme: dark;
   }
-
+ 
   *{ box-sizing: border-box; margin:0; padding:0; }
-
+ 
   html{ scroll-behavior: smooth; }
-
+ 
   body{
     background: var(--bg);
     color: var(--text);
@@ -54,26 +54,26 @@
     -webkit-font-smoothing: antialiased;
     transition: background 0.25s ease, color 0.25s ease;
   }
-
+ 
   ::selection{ background: var(--accent-soft); color: var(--text); }
-
+ 
   a{ color: inherit; text-decoration: none; }
-
+ 
   .mono{ font-family: 'JetBrains Mono', monospace; }
-
+ 
   h1,h2,h3{
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.15;
   }
-
+ 
   .wrap{
     max-width: 780px;
     margin: 0 auto;
     padding: 0 28px;
   }
-
+ 
   /* ---------- NAV ---------- */
   header.nav{
     position: sticky;
@@ -107,7 +107,7 @@
     transition: color 0.15s ease;
   }
   .nav-links a:hover{ color: var(--text); }
-
+ 
   .theme-toggle{
     width: 36px;
     height: 36px;
@@ -128,7 +128,7 @@
   [data-theme="dark"] .icon-moon{ display: none; }
   .icon-sun{ display: none; }
   .icon-moon{ display: block; }
-
+ 
   /* ---------- HERO ---------- */
   .hero{
     padding: 76px 0 48px;
@@ -189,7 +189,7 @@
   .btn-primary:hover{ opacity: 0.88; }
   .btn-ghost{ background: var(--bg-elevated); color: var(--text); }
   .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
-
+ 
   /* telemetry strip — signature element */
   .telemetry{
     border: 1px solid var(--border);
@@ -239,7 +239,7 @@
     color: var(--text-muted);
     margin-top: 4px;
   }
-
+ 
   /* ---------- SECTIONS ---------- */
   section{ padding: 56px 0; border-top: 1px solid var(--border); }
   .sec-head{
@@ -254,13 +254,13 @@
     color: var(--text-muted);
   }
   .sec-head h2{ font-size: 1.5rem; }
-
+ 
   p.section-intro{
     color: var(--text-muted);
     max-width: 60ch;
     margin: -14px 0 28px;
   }
-
+ 
   /* skills */
   .skills-grid{
     display: grid;
@@ -289,7 +289,7 @@
     background: var(--bg-sunken);
     border: 1px solid var(--border);
   }
-
+ 
   /* experience */
   .xp-card{
     background: var(--bg-elevated);
@@ -321,7 +321,7 @@
   ul.bullets li{ margin-bottom: 8px; }
   ul.bullets li::marker{ color: var(--accent); }
   ul.bullets b, ul.bullets strong{ color: var(--text); font-weight: 600; }
-
+ 
   /* projects */
   .projects{
     display: grid;
@@ -371,7 +371,7 @@
   }
   .proj-links a:hover{ opacity: 0.75; }
   .proj-links svg{ width: 14px; height: 14px; }
-
+ 
   .more-projects{
     text-align: center;
     padding: 18px;
@@ -381,7 +381,7 @@
     font-size: 0.92rem;
   }
   .more-projects a{ color: var(--accent); font-weight: 500; }
-
+ 
   /* misc lists: education / certs / achievements */
   .misc-grid{
     display: grid;
@@ -408,7 +408,7 @@
   }
   ul.plain li:last-child{ border-bottom: none; }
   ul.plain li a{ color: var(--accent); font-weight: 500; }
-
+ 
   /* footer / contact */
   footer{
     padding: 56px 0 80px;
@@ -429,7 +429,7 @@
     color: var(--text-muted);
     font-family: 'JetBrains Mono', monospace;
   }
-
+ 
   @media (max-width: 640px){
     .hero{ padding-top: 52px; }
     .skill-row{ grid-template-columns: 1fr; gap: 6px; }
@@ -438,11 +438,11 @@
     .tstat:last-child, .telemetry-grid > .tstat:nth-child(3n){ border-right: 1px solid var(--border); }
     .tstat:nth-child(odd){ border-right: none; }
   }
-
+ 
   @media (prefers-reduced-motion: reduce){
     *{ transition: none !important; scroll-behavior: auto !important; }
   }
-
+ 
   :focus-visible{
     outline: 2px solid var(--accent);
     outline-offset: 2px;
@@ -450,7 +450,7 @@
 </style>
 </head>
 <body>
-
+ 
 <header class="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-name">Mohammad Sufiyan</a>
@@ -466,20 +466,20 @@
     </div>
   </div>
 </header>
-
+ 
 <main id="top">
   <section class="hero" style="border-top:none; padding-top:76px;">
     <div class="wrap">
       <div class="eyebrow">Available for backend / edge ML roles</div>
       <h1>Building inference that runs where the <span class="accent">RAM runs out.</span></h1>
-      <p class="lede">I'm Mohammad Sufiyan — an Edge AI/ML engineer and backend developer. I build systems that squeeze large models onto small hardware: quantized shards, tmpfs pipelines, and the FastAPI/Django backends that hold it all together.</p>
+      <p class="lede">I'm Mohammad Sufiyan ,an Edge AI/ML engineer and backend developer. I love building backend systems, with a particular focus on edge computing and distributed systems. I'm especially interested in designing software that runs reliably on resource-constrained devices and scales across distributed environments.</p>
       <div class="hero-links">
         <a class="btn btn-primary" href="mailto:mohammadsufiyan152@gmail.com">Get in touch</a>
         <a class="btn btn-ghost" href="https://github.com/MdSufiyan005" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohammad-sufiyan-abb76b21a" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-
-      <div class="telemetry">
+ 
+      <!-- <div class="telemetry">
         <div class="telemetry-head">
           <span>modelpulse — edge benchmark · intel i3-1115g4 / 8gb ram</span>
           <div class="telemetry-dots"><i></i><i></i><i></i></div>
@@ -490,9 +490,9 @@
           <div class="tstat"><div class="val">1.31 GB</div><div class="lbl">model streamed to tmpfs</div></div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
-
+ 
   <section id="work">
     <div class="wrap">
       <div class="sec-head"><span class="sec-num mono">01</span><h2>Experience</h2></div>
@@ -516,26 +516,26 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="projects">
     <div class="wrap">
       <div class="sec-head"><span class="sec-num mono">02</span><h2>Projects</h2></div>
       <p class="section-intro">Infrastructure for running and scheduling LLM inference on hardware that was never meant to hold it.</p>
-
+ 
       <div class="projects">
-
+ 
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-title">ModelPulse</div>
-            <div class="proj-tag">Edge inference transfer library</div>
+            <div class="proj-tag">light weight Edge inference transfer library</div>
           </div>
-          <div class="proj-desc">A Python library that automates pushing <b>GGUF</b> models from a server to a resource-constrained edge client, running inference via <b>llama.cpp</b>, and returning structured telemetry — no manual steps between model swaps.</div>
+          <div class="proj-desc">A Python library that automates pushing <b>GGUF</b> models from a server to a resource-constrained edge client, running inference via <b>llama.cpp</b>, and returning structured telemetry - no manual steps between model swaps.</div>
           <div class="proj-meta">
             <span class="chip">llama.cpp</span><span class="chip">FastAPI / WebSockets</span><span class="chip">tmpfs</span><span class="chip">Quantization</span>
           </div>
           <ul class="bullets" style="margin-bottom:14px;">
             <li>Zero-disk inference path: shards stream over HTTP, assemble in RAM via Linux <code class="mono">/dev/shm</code>, protecting edge storage from write cycles.</li>
-            <li>Tensor/block-level delta updates — only changed shards are retransmitted after quantization, not the full model.</li>
+            <li>Tensor/block-level delta updates - changed shards are retransmitted after quantization, not the full model.</li>
             <li>WebSocket control plane for model-ready broadcasts and live, in-memory model swaps with no process restart.</li>
           </ul>
           <div class="proj-links">
@@ -545,13 +545,13 @@
             </a>
           </div>
         </div>
-
+ 
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-title">ModelFlow</div>
             <div class="proj-tag">RL environment for inference scheduling</div>
           </div>
-          <div class="proj-desc">A custom <b>OpenAI Gym</b>–compatible environment (built with OpenEnv) where an agent learns to load, execute, evict, or replace LLMs to maximize throughput under real CPU/RAM constraints — without hitting OOM.</div>
+          <div class="proj-desc">A custom <b>OpenAI Gym</b> – compatible environment (built with <b>OpenEnv</b>) where an agent learns to load, execute, evict, or replace LLMs to maximize throughput under real CPU/RAM constraints — without hitting OOM.</div>
           <div class="proj-meta">
             <span class="chip">Reinforcement Learning</span><span class="chip">Docker</span><span class="chip">FastAPI</span>
           </div>
@@ -568,7 +568,7 @@
             <a href="https://huggingface.co/spaces/MdSufiyan005/modelflow" target="_blank" rel="noopener">Live demo →</a>
           </div>
         </div>
-
+ 
         <div class="proj-card">
           <div class="proj-top">
             <div class="proj-title">MEDICO-AGENT</div>
@@ -590,19 +590,19 @@
             </a>
           </div>
         </div>
-
+ 
       </div>
-
+ 
       <div class="more-projects" style="margin-top:20px;">
-        More on <a href="https://github.com/MdSufiyan005?tab=repositories" target="_blank" rel="noopener">github.com/MdSufiyan005</a> — 50+ repos including hackathon builds and smaller tools.
+        More on <a href="https://github.com/MdSufiyan005?tab=repositories" target="_blank" rel="noopener">github.com/MdSufiyan005</a> - repos including hackathon builds and smaller tools.
       </div>
     </div>
   </section>
-
+ 
   <section id="about">
     <div class="wrap">
       <div class="sec-head"><span class="sec-num mono">03</span><h2>Skills &amp; background</h2></div>
-
+ 
       <div class="skills-grid" style="margin-bottom:40px;">
         <div class="skill-row">
           <div class="skill-cat">Languages</div>
@@ -625,13 +625,13 @@
           <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">MySQL</span></div>
         </div>
       </div>
-
+ 
       <div class="misc-grid">
         <div class="misc-block">
           <h3>Education</h3>
           <div class="edu-item">
             <div class="deg">B.Tech, Computer Science &amp; Engineering (AI &amp; Edge Computing)</div>
-            <div class="org">MIT ADT University, Pune — CGPA 8.57/10</div>
+            <div class="org">MIT ADT University, Pune — CGPA 8.65/10</div>
             <div class="date">2023 — 2027</div>
           </div>
           <h3 style="margin-top:28px;">Certifications</h3>
@@ -650,34 +650,34 @@
       </div>
     </div>
   </section>
-
+ 
   <footer id="contact">
     <div class="wrap contact-inner">
       <div>
         <h2>Let's talk edge inference.</h2>
-        <p>Open to backend and edge AI/ML roles. If you're solving problems where the model has to fit before it can run, I'd like to hear about it.</p>
+        <p>Open to backend, edge computing, and distributed systems roles. Let's build reliable software that scales.</p>
       </div>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:mohammadsufiyan152@gmail.com">mohammadsufiyan152@gmail.com</a>
         <a class="btn btn-ghost" href="https://github.com/MdSufiyan005" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohammad-sufiyan-abb76b21a" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <div class="foot-note">Pune, India · built &amp; deployed via GitHub Pages</div>
+      <div class="foot-note">Pune, India</div>
     </div>
   </footer>
 </main>
-
+ 
 <script>
   (function(){
     var root = document.documentElement;
     var toggle = document.getElementById('themeToggle');
     var stored = null;
     try { stored = localStorage.getItem('theme'); } catch(e) {}
-
+ 
     var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     var initial = stored || (prefersDark ? 'dark' : 'light');
     root.setAttribute('data-theme', initial);
-
+ 
     toggle.addEventListener('click', function(){
       var current = root.getAttribute('data-theme');
       var next = current === 'dark' ? 'light' : 'dark';
@@ -686,6 +686,7 @@
     });
   })();
 </script>
-
+ 
 </body>
 </html>
+ 
