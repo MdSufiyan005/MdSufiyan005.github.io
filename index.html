@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Sufiyan — Edge AI/ML &amp; Backend Engineer</title>
+<meta name="description" content="Mohammad Sufiyan — Edge AI/ML Engineer and Backend Developer. Building inference systems that run on machines with 8GB of RAM.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #F7F4EE;
+    --bg-elevated: #FFFFFF;
+    --bg-sunken: #EFEAE0;
+    --text: #2B2820;
+    --text-muted: #6B6558;
+    --border: #E4DFD2;
+    --accent: #BF5B3C;
+    --accent-text: #FFFFFF;
+    --accent-soft: #F3E1D6;
+    --code-bg: #EFEAE0;
+    --shadow: 0 1px 2px rgba(43,40,32,0.04), 0 4px 16px rgba(43,40,32,0.06);
+    color-scheme: light;
+  }
+
+  [data-theme="dark"]{
+    --bg: #1C1B18;
+    --bg-elevated: #242320;
+    --bg-sunken: #171613;
+    --text: #F1ECE0;
+    --text-muted: #A39C8C;
+    --border: #38352C;
+    --accent: #E08461;
+    --accent-text: #1C1B18;
+    --accent-soft: #3A2A22;
+    --code-bg: #171613;
+    --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  ::selection{ background: var(--accent-soft); color: var(--text); }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; }
+
+  h1,h2,h3{
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .nav-links a{
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover{ color: var(--text); }
+
+  .theme-toggle{
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .theme-toggle:hover{ border-color: var(--accent); }
+  .theme-toggle:active{ transform: scale(0.92); }
+  .theme-toggle svg{ width: 18px; height: 18px; }
+  [data-theme="dark"] .icon-sun{ display: block; }
+  [data-theme="dark"] .icon-moon{ display: none; }
+  .icon-sun{ display: none; }
+  .icon-moon{ display: block; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 76px 0 48px;
+  }
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .hero h1{
+    font-size: clamp(2.1rem, 5.5vw, 3rem);
+    margin-bottom: 14px;
+  }
+  .hero h1 .accent{ color: var(--accent); font-style: italic; }
+  .hero p.lede{
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 58ch;
+    margin-bottom: 30px;
+  }
+  .hero-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 44px;
+  }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all 0.15s ease;
+  }
+  .btn-primary{
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+  }
+  .btn-primary:hover{ opacity: 0.88; }
+  .btn-ghost{ background: var(--bg-elevated); color: var(--text); }
+  .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* telemetry strip — signature element */
+  .telemetry{
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .telemetry-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-sunken);
+  }
+  .telemetry-head span{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .telemetry-dots{ display:flex; gap:5px; }
+  .telemetry-dots i{
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--border);
+  }
+  .telemetry-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .tstat{
+    padding: 16px 18px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .tstat:nth-last-child(-n+2){ border-bottom: none; }
+  .tstat:last-child, .telemetry-grid > .tstat:nth-child(3n){ border-right: none; }
+  .tstat .val{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .tstat .lbl{
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding: 56px 0; border-top: 1px solid var(--border); }
+  .sec-head{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  .sec-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .sec-head h2{ font-size: 1.5rem; }
+
+  p.section-intro{
+    color: var(--text-muted);
+    max-width: 60ch;
+    margin: -14px 0 28px;
+  }
+
+  /* skills */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .skill-row{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-row:last-child{ border-bottom: none; padding-bottom: 0; }
+  .skill-cat{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .chips{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip{
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg-sunken);
+    border: 1px solid var(--border);
+  }
+
+  /* experience */
+  .xp-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .xp-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .xp-role{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; }
+  .xp-org{ color: var(--accent); font-weight: 500; }
+  .xp-date{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .xp-links{ margin: 10px 0 14px; display:flex; gap: 14px; }
+  .xp-links a{ font-size: 0.85rem; color: var(--text-muted); border-bottom: 1px dashed var(--border); }
+  .xp-links a:hover{ color: var(--accent); border-color: var(--accent); }
+  ul.bullets{ padding-left: 18px; color: var(--text-muted); }
+  ul.bullets li{ margin-bottom: 8px; }
+  ul.bullets li::marker{ color: var(--accent); }
+  ul.bullets b, ul.bullets strong{ color: var(--text); font-weight: 600; }
+
+  /* projects */
+  .projects{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .proj-card{
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .proj-card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .proj-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .proj-title{ font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.2rem; }
+  .proj-tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .proj-desc{ color: var(--text-muted); margin: 10px 0 14px; }
+  .proj-desc b{ color: var(--text); font-weight: 600; }
+  .proj-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .proj-links{ display: flex; gap: 16px; }
+  .proj-links a{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .proj-links a:hover{ opacity: 0.75; }
+  .proj-links svg{ width: 14px; height: 14px; }
+
+  .more-projects{
+    text-align: center;
+    padding: 18px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+  .more-projects a{ color: var(--accent); font-weight: 500; }
+
+  /* misc lists: education / certs / achievements */
+  .misc-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .misc-block h3{
+    font-size: 0.95rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .edu-item .deg{ font-weight: 600; }
+  .edu-item .org{ color: var(--text-muted); font-size: 0.92rem; margin-top: 2px; }
+  .edu-item .date{ font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+  ul.plain{ list-style: none; }
+  ul.plain li{
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  ul.plain li:last-child{ border-bottom: none; }
+  ul.plain li a{ color: var(--accent); font-weight: 500; }
+
+  /* footer / contact */
+  footer{
+    padding: 56px 0 80px;
+    border-top: 1px solid var(--border);
+  }
+  .contact-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  footer h2{ font-size: 1.7rem; }
+  footer p{ color: var(--text-muted); max-width: 50ch; }
+  .contact-links{ display: flex; flex-wrap: wrap; gap: 12px; }
+  .foot-note{
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 640px){
+    .hero{ padding-top: 52px; }
+    .skill-row{ grid-template-columns: 1fr; gap: 6px; }
+    .misc-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .nav-links a:not(.theme-toggle){ display: none; }
+    .tstat:last-child, .telemetry-grid > .tstat:nth-child(3n){ border-right: 1px solid var(--border); }
+    .tstat:nth-child(odd){ border-right: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Mohammad Sufiyan</a>
+    <div class="nav-links">
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="border-top:none; padding-top:76px;">
+    <div class="wrap">
+      <div class="eyebrow">Available for backend / edge ML roles</div>
+      <h1>Building inference that runs where the <span class="accent">RAM runs out.</span></h1>
+      <p class="lede">I'm Mohammad Sufiyan — an Edge AI/ML engineer and backend developer. I build systems that squeeze large models onto small hardware: quantized shards, tmpfs pipelines, and the FastAPI/Django backends that hold it all together.</p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="mailto:mohammadsufiyan152@gmail.com">Get in touch</a>
+        <a class="btn btn-ghost" href="https://github.com/MdSufiyan005" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohammad-sufiyan-abb76b21a" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <div class="telemetry">
+        <div class="telemetry-head">
+          <span>modelpulse — edge benchmark · intel i3-1115g4 / 8gb ram</span>
+          <div class="telemetry-dots"><i></i><i></i><i></i></div>
+        </div>
+        <div class="telemetry-grid">
+          <div class="tstat"><div class="val">0.188s</div><div class="lbl">avg time-to-first-token</div></div>
+          <div class="tstat"><div class="val">13.9 tok/s</div><div class="lbl">aggregate throughput</div></div>
+          <div class="tstat"><div class="val">1.31 GB</div><div class="lbl">model streamed to tmpfs</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num mono">01</span><h2>Experience</h2></div>
+      <div class="xp-card">
+        <div class="xp-top">
+          <div>
+            <div class="xp-role">Backend Developer Intern</div>
+            <div class="xp-org">Rudra Nursery</div>
+          </div>
+          <div class="xp-date">June 2025 — July 2025</div>
+        </div>
+        <div class="xp-links">
+          <a href="https://github.com/MdSufiyan005/Nursery-Website" target="_blank" rel="noopener">Source →</a>
+          <a href="https://rudray-nursery.onrender.com/" target="_blank" rel="noopener">Live demo →</a>
+        </div>
+        <ul class="bullets">
+          <li>Independently architected and deployed a full-stack e-commerce platform for a live nursery business using <strong>Django</strong>, handling auth, payments, media, and deployment end to end.</li>
+          <li>Implemented secure sign-in with <strong>Django AllAuth + Google OAuth</strong> and integrated <strong>Razorpay</strong> for payment processing.</li>
+          <li>Set up <strong>Neon serverless PostgreSQL</strong> for the database, <strong>Cloudinary</strong> for media, and <strong>Docker</strong> for containerized deployment on <strong>Render</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num mono">02</span><h2>Projects</h2></div>
+      <p class="section-intro">Infrastructure for running and scheduling LLM inference on hardware that was never meant to hold it.</p>
+
+      <div class="projects">
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-title">ModelPulse</div>
+            <div class="proj-tag">Edge inference transfer library</div>
+          </div>
+          <div class="proj-desc">A Python library that automates pushing <b>GGUF</b> models from a server to a resource-constrained edge client, running inference via <b>llama.cpp</b>, and returning structured telemetry — no manual steps between model swaps.</div>
+          <div class="proj-meta">
+            <span class="chip">llama.cpp</span><span class="chip">FastAPI / WebSockets</span><span class="chip">tmpfs</span><span class="chip">Quantization</span>
+          </div>
+          <ul class="bullets" style="margin-bottom:14px;">
+            <li>Zero-disk inference path: shards stream over HTTP, assemble in RAM via Linux <code class="mono">/dev/shm</code>, protecting edge storage from write cycles.</li>
+            <li>Tensor/block-level delta updates — only changed shards are retransmitted after quantization, not the full model.</li>
+            <li>WebSocket control plane for model-ready broadcasts and live, in-memory model swaps with no process restart.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/MdSufiyan005/Model-Pulse" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.28 5.68.42.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-title">ModelFlow</div>
+            <div class="proj-tag">RL environment for inference scheduling</div>
+          </div>
+          <div class="proj-desc">A custom <b>OpenAI Gym</b>–compatible environment (built with OpenEnv) where an agent learns to load, execute, evict, or replace LLMs to maximize throughput under real CPU/RAM constraints — without hitting OOM.</div>
+          <div class="proj-meta">
+            <span class="chip">Reinforcement Learning</span><span class="chip">Docker</span><span class="chip">FastAPI</span>
+          </div>
+          <ul class="bullets" style="margin-bottom:14px;">
+            <li>Discrete action space (load / execute / evict / replace / idle) with observations reflecting memory pressure and queue depth.</li>
+            <li>Programmatic graders scoring agents on quantization trade-offs, OOM avoidance, and queue efficiency.</li>
+            <li>Benchmarked on an Intel i3 / 8GB laptop so constraints mirror real edge conditions, not lab settings.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/MdSufiyan005/Model_Flow" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.28 5.68.42.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+            <a href="https://huggingface.co/spaces/MdSufiyan005/modelflow" target="_blank" rel="noopener">Live demo →</a>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-title">MEDICO-AGENT</div>
+            <div class="proj-tag">Medical VQA · vision-language fine-tuning</div>
+          </div>
+          <div class="proj-desc">A multi-modal medical assistant answering queries from text, X-ray/CT/MRI images, or both, via an agent-based architecture over fine-tuned <b>Qwen-VL</b> models.</div>
+          <div class="proj-meta">
+            <span class="chip">LoRA / Unsloth</span><span class="chip">RAG</span><span class="chip">Gradio</span>
+          </div>
+          <ul class="bullets" style="margin-bottom:14px;">
+            <li>Fine-tuned four Qwen-VL models on 12,149 medical VQA samples plus a 6,666-sample PubMed Vision subset.</li>
+            <li>Best model (Qwen3-VL-8B Instruct) reached 45.90% exact match and 94.79% average BERTScore.</li>
+            <li>RAG pipeline for lung-disease grounding via Tavily search, observed with LangSmith; FastAPI + Gradio for inference.</li>
+          </ul>
+          <div class="proj-links">
+            <a href="https://github.com/MdSufiyan005/MEDICO-AGENT" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.28 5.68.42.36.78 1.08.78 2.18v3.23c0 .31.21.67.8.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="more-projects" style="margin-top:20px;">
+        More on <a href="https://github.com/MdSufiyan005?tab=repositories" target="_blank" rel="noopener">github.com/MdSufiyan005</a> — 50+ repos including hackathon builds and smaller tools.
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num mono">03</span><h2>Skills &amp; background</h2></div>
+
+      <div class="skills-grid" style="margin-bottom:40px;">
+        <div class="skill-row">
+          <div class="skill-cat">Languages</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">C++</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">ML / AI</div>
+          <div class="chips"><span class="chip">PyTorch</span><span class="chip">Transformers</span><span class="chip">Hugging Face</span><span class="chip">LoRA</span><span class="chip">Unsloth</span><span class="chip">GGUF</span><span class="chip">llama.cpp</span><span class="chip">Reinforcement Learning</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Inference &amp; systems</div>
+          <div class="chips"><span class="chip">Quantization</span><span class="chip">Edge inference</span><span class="chip">Model sharding</span><span class="chip">tmpfs / /dev/shm</span><span class="chip">WebSocket orchestration</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Backend &amp; DevOps</div>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">Django</span><span class="chip">Docker</span><span class="chip">Redis</span><span class="chip">Celery</span><span class="chip">Uvicorn</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Databases</div>
+          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">MySQL</span></div>
+        </div>
+      </div>
+
+      <div class="misc-grid">
+        <div class="misc-block">
+          <h3>Education</h3>
+          <div class="edu-item">
+            <div class="deg">B.Tech, Computer Science &amp; Engineering (AI &amp; Edge Computing)</div>
+            <div class="org">MIT ADT University, Pune — CGPA 8.57/10</div>
+            <div class="date">2023 — 2027</div>
+          </div>
+          <h3 style="margin-top:28px;">Certifications</h3>
+          <ul class="plain">
+            <li>Django Certification — Meta · <a href="https://coursera.org/share/ceae0c7b9f0a75b600a583c955ac3b3b" target="_blank" rel="noopener">view certificate ↗</a></li>
+          </ul>
+        </div>
+        <div class="misc-block">
+          <h3>Achievements</h3>
+          <ul class="plain">
+            <li>Built a vendor management platform at the TuteDude Online Website Hackathon.</li>
+            <li>Developed a real-time exam proctoring system at The Great Bengaluru Hackathon.</li>
+            <li>Led a team at Smart India Hackathon (SIH) to design a ship navigation &amp; safety assistance system.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <h2>Let's talk edge inference.</h2>
+        <p>Open to backend and edge AI/ML roles. If you're solving problems where the model has to fit before it can run, I'd like to hear about it.</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:mohammadsufiyan152@gmail.com">mohammadsufiyan152@gmail.com</a>
+        <a class="btn btn-ghost" href="https://github.com/MdSufiyan005" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mohammad-sufiyan-abb76b21a" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="foot-note">Pune, India · built &amp; deployed via GitHub Pages</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    var toggle = document.getElementById('themeToggle');
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch(e) {}
+
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var initial = stored || (prefersDark ? 'dark' : 'light');
+    root.setAttribute('data-theme', initial);
+
+    toggle.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
